@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>All Appartments</title>
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet" />
+
+        <style>
+    .purple {
+    background-color: #6f42c1; /* Custom purple color */
+    color: white;
+}
+.purple-color{
+    color: #6f42c1;
+}
+.purple-without-hover{
+    background-color: #6f42c1; /* Custom purple color */
+    color: white;
+}
+.purple:hover {
+    background-color: #5a379d; /* Darker purple on hover */
+    color: white;
+}
+.outlined-purple{
+    border:1px solid #6f42c1;
+    color: #5a379d;
+}
+.outlined-purple:hover{
+    background-color: #6f42c1; /* Custom purple color */
+    color: white;
+}
+
+
+.page-link {
+    color: #6f42c1; /* Normal state color */
+}
+
+.page-link:hover {
+    color: #5a379c; /* Slightly darker shade on hover */
+}
+
+.page-item.active .page-link {
+    background-color: #6f42c1; /* Background color for active link */
+    color: white; /* White text for active link */
+    border-color: #6f42c1;
+}
+
+.page-item.active .page-link:hover {
+    background-color: #5a379c; /* Darker background on hover for active link */
+    color: white;
+}
+   </style>
+    </head>
+    <body>
+        <!-- Navbar-Section -->
+        <div id="mynav"></div>
+
+        <!-- Page title -->
+        <h2 class="text-center " style="margin-top: 120px">Appartment
+            Listings</h2>
+
+            <!-- Fitler section -->
+        <div class="container py-4 shadow-sm" style="background-color: #FFFFFF;">
+            <div class="filter-container">
+                <h5 class="mb-4">Filters</h5>
+
+                <div class="row g-4">
+                    <!-- Duration -->
+                    <details class="col-12 col-md-4 border-end col-sm-6">
+                        <summary class="fs-6 fw-bold pb-1">Duration</summary>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check text-start">
+                                    <input class="form-check-input"
+                                        type="checkbox" id="daily">
+                                    <label class="form-check-label"
+                                        for="daily">Daily</label>
+                                </div>
+                                <div class="form-check text-start">
+                                    <input class="form-check-input"
+                                        type="checkbox" id="monthly">
+                                    <label class="form-check-label"
+                                        for="monthly">Monthly</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check text-start">
+                                    <input class="form-check-input"
+                                        type="checkbox" id="weekly">
+                                    <label class="form-check-label"
+                                        for="weekly">Weekly</label>
+                                </div>
+                                <div class="form-check text-start">
+                                    <input class="form-check-input"
+                                        type="checkbox" id="yearly">
+                                    <label class="form-check-label"
+                                        for="yearly">Yearly</label>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Price Range -->
+                    <details class="col-12 col-md-4">
+                        <summary class="fs-6 fw-bold pb-1">Price Range</summary>
+                        <div class="row g-2">
+                            <div class="col-6">
+                                <div class="price-input">
+                                    <input type="number" class="form-control"
+                                        value="30">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="price-input">
+                                    <input type="number" class="form-control"
+                                        value="200">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slid d-flex justify-content-center pt-3">
+                            <input type="range"
+                                style="width: 70%;accent-color: #6f42c1;">
+                        </div>
+                    </details>
+
+                    <!-- Category -->
+                    <details class="col-12 col-md-4">
+                        <summary class="fs-6 fw-bold pb-1">Category</summary>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check text-start">
+                                    <input class="form-check-input"
+                                        type="checkbox" id="villa">
+                                    <label class="form-check-label"
+                                        for="villa">Villa</label>
+                                </div>
+                                <div class="form-check text-start">
+                                    <input class="form-check-input"
+                                        type="checkbox" id="studio">
+                                    <label class="form-check-label"
+                                        for="studio">Studio</label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check text-start">
+                                    <input class="form-check-input"
+                                        type="checkbox" id="flat">
+                                    <label class="form-check-label"
+                                        for="flat">Flat</label>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Number of Bedrooms -->
+                    <details class="col-12 col-md-4">
+                        <summary class="fs-6 fw-bold pb-1">Number of
+                            Bedrooms</summary>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-check text-start">
+                                    <input class="form-check-input"
+                                        type="checkbox" id="1bed">
+                                    <label class="form-check-label" for="1bed">1
+                                        </label>
+                                </div>
+                                <div class="form-check text-start">
+                                    <input class="form-check-input"
+                                        type="checkbox" id="3bed">
+                                    <label class="form-check-label" for="3bed">3
+                                        </label>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-check text-start">
+                                    <input class="form-check-input"
+                                        type="checkbox" id="2bed">
+                                    <label class="form-check-label" for="2bed">2
+                                        </label>
+                                </div>
+                                <div class="form-check text-start">
+                                    <input class="form-check-input"
+                                        type="checkbox" id="4bed">
+                                    <label class="form-check-label"
+                                        for="4bed">+4 </label>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Rating -->
+                    <details class="col-12 col-md-4 border-end">
+                        <summary class="fs-6 fw-bold pb-3">Rating</summary>
+                        <div class="star-rating">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-star"><polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-star"><polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-star"><polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-star"><polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-star"><polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        </div>
+                    </details>
+
+                    <!-- Furnished -->
+                    <details class="col-12 col-md-4">
+                        <summary class="fs-6 fw-bold pb-3">Furnished</summary>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                name="furnished" id="yes" checked>
+                            <label class="form-check-label"
+                                for="yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio"
+                                name="furnished" id="no">
+                            <label class="form-check-label" for="no">No</label>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Buttons -->
+                <div class="row mt-5">
+                    <div class="col-12 text-center">
+                        <button class="btn btn-outline-dark me-2"
+                            style="width: 10%; min-width: fit-content;">Reset</button>
+                        <button class="btn purple "
+                            style="width: 10%;min-width: fit-content;">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Appartment Listings -->
+
+        <div class="container mt-5">
+
+            <!-- First row -->
+            <div class="row mb-4">
+                <div class="col">
+                    <div class="container  rounded shadow-sm"
+                    style="width: auto;background-color: #FFFFFF;min-width: 200px">
+                        <img src="Assets/listings1.png"
+                            class="card-img-top mt-3 " alt="...">
+                        <div class="p-0">
+                            <h5 class="card-title pt-1">Bedroom flat</h5>
+                            <p class="fs-9 pt-1  "
+                                style="color: #9095A0;">Price: $800/month</p>
+                            <p class="mt-0" style="color: #9095A0;">Spacious
+                                2-bedroom apartment located in downtown with
+                                easy access to public transport.</p>
+                            <a href="#" class="btn outlined-purple w-100">View
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="container  rounded shadow-sm"
+                    style="width: auto;background-color: #FFFFFF;min-width: 200px">
+                        <img src="Assets/listings2.png"
+                            class="card-img-top mt-3 " alt="...">
+                        <div class="p-0">
+                            <h5 class="card-title pt-1">Studio Apartment</h5>
+                            <p class="fs-9 pt-1  "
+                                style="color: #9095A0;">Price: $400/month</p>
+                            <p class="mt-0" style="color: #9095A0;">Charming
+                                studio apartment with modern amenities and good
+                                ventilation.</p>
+                            <a href="#" class="btn outlined-purple w-100">View
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="container  rounded shadow-sm"
+                    style="width: auto;background-color: #FFFFFF;min-width: 200px">
+                        <img src="Assets/listings3.png"
+                            class="card-img-top mt-3 " alt="...">
+                        <div class="p-0">
+                            <h5 class="card-title pt-1">Bedroom Villa</h5>
+                            <p class="fs-9 pt-1  "
+                                style="color: #9095A0;">Price: $1,500/month</p>
+                            <p class="mt-0" style="color: #9095A0;">Elegant
+                                4-bedroom villa with a private garden and pool
+                                in a quiet neighborhood.</p>
+                            <a href="#" class="btn outlined-purple w-100">View
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Second row -->
+
+            <div class="row mb-4 mt-3 ">
+                <div class="col">
+                    <div class="container  rounded shadow-sm"
+                    style="width: auto;background-color: #FFFFFF;min-width: 200px">
+                        <img src="Assets/listings1.png"
+                            class="card-img-top mt-3 " alt="...">
+                        <div class="p-0">
+                            <h5 class="card-title pt-1">Bedroom flat</h5>
+                            <p class="fs-9 pt-1  "
+                                style="color: #9095A0;">Price: $800/month</p>
+                            <p class="mt-0" style="color: #9095A0;">Spacious
+                                2-bedroom apartment located in downtown with
+                                easy access to public transport.</p>
+                            <a href="#" class="btn outlined-purple w-100">View
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="container  rounded shadow-sm"
+                    style="width: auto;background-color: #FFFFFF;min-width: 200px">
+                        <img src="Assets/listings2.png"
+                            class="card-img-top mt-3 " alt="...">
+                        <div class="p-0">
+                            <h5 class="card-title pt-1">Studio Apartment</h5>
+                            <p class="fs-9 pt-1  "
+                                style="color: #9095A0;">Price: $400/month</p>
+                            <p class="mt-0" style="color: #9095A0;">Charming
+                                studio apartment with modern amenities and good
+                                ventilation.</p>
+                            <a href="#" class="btn outlined-purple w-100">View
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="container  rounded shadow-sm"
+                    style="width: auto;background-color: #FFFFFF;min-width: 200px">
+                        <img src="Assets/listings3.png"
+                            class="card-img-top mt-3 " alt="...">
+                        <div class="p-0">
+                            <h5 class="card-title pt-1">Bedroom Villa</h5>
+                            <p class="fs-9 pt-1  "
+                                style="color: #9095A0;">Price: $1,500/month</p>
+                            <p class="mt-0" style="color: #9095A0;">Elegant
+                                4-bedroom villa with a private garden and pool
+                                in a quiet neighborhood.</p>
+                            <a href="#" class="btn outlined-purple w-100">View
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Third Row -->
+            <div class="row mb-4 mt-3 ">
+                <div class="col">
+                    <div class="container  rounded shadow-sm"
+                       style="width: auto;background-color: #FFFFFF;min-width: 200px">
+                        <img src="Assets/listings1.png"
+                            class="card-img-top mt-3 " alt="...">
+                        <div class="p-0">
+                            <h5 class="card-title pt-1">Bedroom flat</h5>
+                            <p class="fs-9 pt-1  "
+                                style="color: #9095A0;">Price: $800/month</p>
+                            <p class="mt-0" style="color: #9095A0;">Spacious
+                                2-bedroom apartment located in downtown with
+                                easy access to public transport.</p>
+                            <a href="#" class="btn outlined-purple w-100">View
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="container  rounded shadow-sm"
+                    style="width: auto;background-color: #FFFFFF;min-width: 200px">
+                        <img src="Assets/listings2.png"
+                            class="card-img-top mt-3 " alt="...">
+                        <div class="p-0">
+                            <h5 class="card-title pt-1">Studio Apartment</h5>
+                            <p class="fs-9 pt-1  "
+                                style="color: #9095A0;">Price: $400/month</p>
+                            <p class="mt-0" style="color: #9095A0;">Charming
+                                studio apartment with modern amenities and good
+                                ventilation.</p>
+                            <a href="#" class="btn outlined-purple w-100">View
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="container  rounded shadow-sm"
+                        style="width: auto;background-color: #FFFFFF;min-width: 200px">
+                        <img src="Assets/listings3.png"
+                            class="card-img-top mt-3 " alt="...">
+                        <div class="p-0">
+                            <h5 class="card-title pt-1">Bedroom Villa</h5>
+                            <p class="fs-9 pt-1  "
+                                style="color: #9095A0;">Price: $1,500/month</p>
+                            <p class="mt-0" style="color: #9095A0;">Elegant
+                                4-bedroom villa with a private garden and pool
+                                in a quiet neighborhood.</p>
+                            <a href="#" class="btn outlined-purple w-100">View
+                                Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <nav aria-label="Page navigation ">
+            <ul class="pagination justify-content-center">
+              <li class="page-item ">
+                <a class="page-link" href="#" >Previous</a>
+              </li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item "><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+          
+
+
+<footer>
+    <div id="myFooter"></div>
+</footer>
+         
+
+
+            <script>
+        fetch('../Components/navbar.html').then((response) => response.text()).then(data=>{
+            document.getElementById("mynav").innerHTML = data;
+        });
+
+        fetch('../Components/footer.html').then((response)=>response.text()).then(data=>
+        {
+            document.getElementById("myFooter").innerHTML = data;
+        }
+        );
+    </script>
+        </body>
+    </html>
+

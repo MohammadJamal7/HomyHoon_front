@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Example</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/Home/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Image section -->
+    <div class="img-section d-flex flex-column p-4" style="margin-top: 65px">
+      <h1 style="max-width: 600px">Your dream home awaits at HomyHoon!</h1>
+      <br />
+      <p style="max-width: 330px">
+        <strong>HomyHoon</strong> connects you with property owners in Jordan to easily find and
+        rent or buy your dream home without agents.
+      </p>
+      <button style="width: fit-content" class="btn purple">
+        Discover now
+      </button>
+    </div>
+
+    <h2 class="text-center py-4 mt-5 mb-2">Choose Category:</h2>
+    <div class="Categories-section container mb-0 ">
+        <div class="row gap-4 pt-3">
+            <!-- category1 -->
+            <div class="container d-flex category align-items-center mb-0">
+               <div class="col">
+                <div class="col">
+                    <h3>villas</h3>
+                    <p>Luxurious homes with private gardens.</p>
+                    <button class="btn card-btn-style">View All</button>
+                </div>
+               </div>
+               <div class="col">
+                <img src="Assets/category1.png" alt="Villas image" style="width: 91%;
+height: 126px; border-radius: 10px;">
+               </div>
+
+<!-- catergory2 -->
+            </div>
+            <div class="container d-flex category align-items-center ">
+                <div class="col">
+                 <div class="col">
+                     <h3>Flats</h3>
+                     <p>Modern spaces for individuals and families.</p>
+                     <button class="btn card-btn-style">View All</button>
+                 </div>
+                </div>
+                <div class="col">
+                 <img src="Assets/category2.png" alt="Villas Flats" style="width: 91%;
+ height: 126px; border-radius: 10px;">
+                </div>
+                <!-- category3 -->
+             </div>
+             <div class="container d-flex category align-items-center ">
+              <div class="col">
+               <div class="col">
+                   <h3>Studios</h3>
+                   <p>Cozy open-layout apartments for profs</p>
+                   <button class="btn card-btn-style">View All</button>
+               </div>
+              </div>
+              <div class="col">
+               <img src="Assets/category3.png" alt="Villas image" style="width: 91%;
+height: 126px; border-radius: 10px;">
+              </div>
+             </div>
+           
+        </div>
+    </div>
+
+
+    <!-- Locations -->
+    <h2 class="text-center py-4 mt-2 mb-2 ">Choose location:</h2>
+    <div class="Categories-section container mb-0 ">
+        <div class="row gap-4 pt-3">
+            <!-- category1 -->
+            <div class="container d-flex category align-items-center mb-0">
+               <div class="col">
+                <div class="col">
+                    <h3>Amman</h3>
+                    <p>Modern capital, ancient roots, vibrant culture.</p>
+                    <button class="btn card-btn-style">View All</button>
+                </div>
+               </div>
+               <div class="col">
+                <img src="Assets/loc1.png" alt="Villas image" style="width: 91%;
+height: 126px; border-radius: 10px;">
+               </div>
+
+<!-- catergory2 -->
+            </div>
+            <div class="container d-flex category align-items-center">
+                <div class="col">
+                 <div class="col">
+                     <h3>Petra</h3>
+                     <p>Ancient city, carved sandstone beauty.</p>
+                     <button class="btn card-btn-style">View All</button>
+                 </div>
+                </div>
+                <div class="col">
+                 <img src="Assets/loc2.png" alt="Villas Flats" style="width: 91%;
+ height: 126px; border-radius: 10px;">
+                </div>
+                <!-- category3 -->
+             </div>
+             <div class="container d-flex category align-items-center">
+                <div class="col">
+                 <div class="col">
+                     <h3>Irbid</h3>
+                     <p>Historic city, academic hub, olive groves.</p>
+                     <button class="btn card-btn-style">View All</button>
+                 </div>
+                </div>
+                <div class="col">
+                 <img src="Assets/loc3.png" alt="Villas image" style="width: 91%;
+ height: 126px; border-radius: 10px;">
+                </div>
+             </div>
+           
+        </div>
+    </div>
+
+    <!-- Do you have quesions section -->
+     <div class="container w-75 py-4 px-1 mt-5 mb-3 purple-without-hover rounded">
+        <h2 class="text-center">Do you have questions?</h2>
+     </div>
+    
+
+     <!-- Contact-section -->
+     <div class="container my-5 border py-4 " style="height: auto; margin-bottom: 200px;">
+      <div class="row">
+        <div class="col px-4">
+          <form action="" method="" class="h-100">
+
+            <h1 class=" purple-color text-center">Contact Us</h1>
+            <!-- Name input -->
+            <div class="form-group ">
+              <label class="text-center fw-bold" for="name">Name</label>
+              <input type="text" class="form-control" name="name" placeholder="Enter your name">
+            </div>
+    
+            <!-- Email input -->
+            <div class="form-group ">
+              <label class="text-center fw-bold" for="email">Email</label>
+              <input type="email" class="form-control" name="email" placeholder="your@email.com">
+            </div>
+    
+            <!-- Question input -->
+            <div class="form-group ">
+              <label class="text-center fw-bold" for="question">Question</label>
+              <textarea name="question" class="form-control" id="question" rows="4">Question or Feedback</textarea>
+            </div>
+            <button  class="btn purple rounded mt-2 w-25">Submit</button>
+          </form>
+        </div>
+    
+        <div class="col d-none d-md-block">
+          <img src="Assets/map2.png" class="rounded img-fluid"  height="auto" alt="Fake map" style="max-height: 336px;max-width: 636px;">
+          
+        </div>
+        
+        
+      </div>
+    </div>
+    
+    <div id="myFooter"></div>
+    <script>
+      fetch("../Components/navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-placeholder").innerHTML = data;
+        });
+
+        fetch('../Components/footer.html').then((response)=>response.text()).then(data=>
+        {
+            document.getElementById("myFooter").innerHTML = data;
+        }
+        );
+    </script>
+
+    <!-- Bootstrap JavaScript (before closing body tag) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
