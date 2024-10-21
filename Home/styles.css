@@ -20,11 +20,13 @@ html,body{
     color: white;
 }
 
+
 .img-section {
     height: 80vh;
-    background-image: url('Assets/welcome-img.jpg');
+    background-image: url('Assets/welcome-image.png');
     background-size: cover;
     background-position: center;
+    
 }
 
 .Categories-section {

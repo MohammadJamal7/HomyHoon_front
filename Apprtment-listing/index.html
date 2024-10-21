@@ -458,8 +458,10 @@
 
 
             <script>
-        fetch('../Components/navbar.html').then((response) => response.text()).then(data=>{
-            document.getElementById("mynav").innerHTML = data;
+       fetch("../Components/navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("mynav").innerHTML = data;
         });
 
         fetch('../Components/footer.html').then((response)=>response.text()).then(data=>
