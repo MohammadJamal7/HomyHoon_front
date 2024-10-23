@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        .outlined-purple{
+    border:1px solid #6f42c1;
+    color: #5a379d;
+}
+.outlined-purple:hover{
+    background-color: #6f42c1; /* Custom purple color */
+    color: white;
+}
+.purple {
+    background-color: #6f42c1; /* Custom purple color */
+    color: white;
+}
+.purple:hover {
+    background-color: #5a379d; /* Darker purple on hover */
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row " style="height: 100vh;">
+            <!-- Left Side - Registration Form -->
+            <div class="col-md-6 d-flex align-items-center bg-light">
+                <div class="w-100 p-4">
+                    <h2 class="text-center mb-4" style="color: #6f42c1;">Create Account</h2>
+                    
+                    <!-- Social Login Buttons -->
+                    <div class="d-grid gap-2 mb-3">
+                        <button class="btn border "  style="color: #6f42c1; border-color: #6f42c1;"  type="button">
+                            <i class="fab fa-google me-2"></i> Continue with Google
+                        </button>
+                        <button class="btn border" style="color: #6f42c1; border-color: #6f42c1;" type="button">
+                            <i class="fab fa-facebook-f me-2"></i> Continue with Facebook
+                        </button>
+                        <button class="btn border" style="color: #6f42c1; border-color: #6f42c1;" type="button">
+                            <i class="fab fa-x me-2"></i> Continue with X
+                        </button>
+                    </div>
+
+                    <div class="position-relative text-center my-4">
+                        <hr class="position-absolute w-100 top-50 start-0">
+                        <span class="bg-light px-3 position-relative text-muted small">OR</span>
+                    </div>
+
+                    <!-- Registration Form -->
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn purple" type="submit">Register</button>
+                        </div>
+                    </form>
+
+                    <div class="text-center mt-3">
+                        <span class="text-muted">Already have an account?</span>
+                        <a href="../Login_page/index.html" style="color: #6f42c1; text-decoration: none;"> Login</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - Image -->
+            <div class="col-md-6 d-none d-md-block p-0">
+                <div class="h-100" style="background-color: #6f42c1;">
+                    <div class="d-flex flex-column justify-content-center align-items-center h-100 text-white p-5">
+                        <img src="/MainAssets/logo-icon-white.png" alt="Welcome" height="100px" class=" mb-4">
+                        <h2 class="mb-4">Welcome to Our Platform</h2>
+                        <p class="text-center">Join our community and discover amazing features that await you. Start your journey with us today!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -69,6 +69,21 @@
             grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             gap: 10px;
         }
+        .delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 0, 0, 0.7);
+    border: none;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    
+}
+
+.delete-btn:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
     </style>
 </head>
 
@@ -137,13 +152,72 @@
 
         <!-- Description -->
         <div class="row pt-4">
-            <div class="col">
+            <div class="col-lg-6 col-sm-12">
                 <label for="description" class="fw-semibold"><small>Description</small></label>
                 <textarea name="description" rows="5" class="form-control bg-light" placeholder="Write something to describe your apartment..." cols="8"></textarea>
             </div>
+            <div class="col-lg-6 col-sm-12">
+                <label for="features" class="fw-semibold " ><small>Features</small></label>
+                <div class="row  ">
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="kitchen">
+                            <label class="form-check-label" for="kitchen">
+                              Kitchen
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="aid">
+                            <label class="form-check-label" for="aid">
+                              First Aid
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="tv">
+                            <label class="form-check-label" for="tv">
+                              TV
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="wifi">
+                            <label class="form-check-label" for="wifi">
+                             Wifi
+                            </label>
+                          </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="kitchen">
+                            <label class="form-check-label" for="kitchen">
+                              Free drink
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="aid">
+                            <label class="form-check-label" for="aid">
+                              Air condition
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="tv">
+                            <label class="form-check-label" for="tv">
+                              Heating
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="wifi">
+                            <label class="form-check-label" for="wifi">
+                             Parking
+                            </label>
+                          </div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
         <hr class="mt-5">
-        <div class="row mt-4">
+        <div class="row mt-6">
             <div class="col-lg-7 col-sm-12">
                 <div class="container-fluid rounded p-3" style="min-height: 30vh;">
                     <span class="fs-6 me-1 fw-bold">Media</span> <span><img src="Assets/check.svg" alt=""></span>
@@ -164,7 +238,19 @@
             <div class="col-lg-5 col-sm-12">
                 <div class="container-fluid rounded p-4" style="min-height: 30vh;">
                     <span class="fs-6 me-1 fw-bold">Location</span> <span><img src="Assets/check.svg" alt=""></span>
-                    <div class="container bg-light mt-2 rounded" style="min-height: 20vh;"></div>
+                    <div class="container  mt-2 rounded" style="min-height: 20vh;">
+                        <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3385.3451910609583!2d35.91063517581931!3d31.953949329378034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca08bfab67b5b%3A0x8150ed6d47d236a6!2sAmman%2C%20Jordan!5e0!3m2!1sen!2sus!4v1698070128124!5m2!1sen!2sus" 
+ 
+  
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -191,28 +277,17 @@
                 document.getElementById("myFooter").innerHTML = data;
             });
 
-      document.addEventListener('DOMContentLoaded', function() {
-    const toggleBtn = document.getElementById('toggleBtn');
-    const cardBody = document.getElementById('cardBody');
+            document.addEventListener('DOMContentLoaded', function() {
     const imageGrid = document.getElementById('imageGrid');
     const addImageBtn = document.getElementById('addImageBtn');
     const albumCount = document.getElementById('albumCount');
     const fileInput = document.getElementById('fileInput');
 
-    let isExpanded = true;
     let imageCount = 0;
     const maxImages = 5;
 
     function updateAlbumCount() {
         albumCount.textContent = `Album ${imageCount} / ${maxImages} images`;
-    }
-
-    function toggleExpand() {
-        isExpanded = !isExpanded;
-        cardBody.style.display = isExpanded ? 'block' : 'none';
-        toggleBtn.innerHTML = isExpanded 
-            ? '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/></svg>'
-            : '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/></svg>';
     }
 
     function addImage(file) {
@@ -222,9 +297,9 @@
                 const newImageCol = document.createElement('div');
                 newImageCol.classList.add('image-item');  // Add a class to help remove the image later
                 newImageCol.innerHTML = `
-                    <div class="image-container rounded">
+                    <div class="image-container rounded" style="position: relative;">
                         <img src="${e.target.result}" alt="Gallery image ${imageCount + 1}" class="img-fluid rounded">
-                        <button class="delete-btn">Delete</button>  <!-- Delete button -->
+                        <button class="delete-btn btn btn-danger text-white ">X</button  
                     </div>
                 `;
                 imageGrid.insertBefore(newImageCol, addImageBtn);
@@ -250,35 +325,21 @@
         }
     }
 
+    fileInput.addEventListener('change', function(event) {
+        const files = event.target.files;
+        for (let i = 0; i < files.length; i++) {
+            addImage(files[i]);
+        }
+        fileInput.value = '';  // Clear the input to allow selecting the same file again
+    });
+
     addImageBtn.addEventListener('click', function() {
         fileInput.click();
     });
 
-    fileInput.addEventListener('change', function(event) {
-        const files = event.target.files;
-
-        // Loop through each selected file and process them
-        Array.from(files).forEach(function(file) {
-            if (imageCount < maxImages) {
-                addImage(file);  // Call addImage for each file
-            }
-        });
-
-        // Clear the input so the user can select the same file again if needed
-        fileInput.value = '';
-    });
-
-    toggleBtn.addEventListener('click', toggleExpand);
     updateAlbumCount();
 });
-deleteBtn.addEventListener('click', function() {
-    imageGrid.removeChild(newImageCol);
-    imageCount--;
-    updateAlbumCount();
-    if (imageCount < maxImages) {
-        addImageBtn.style.display = 'block';
-    }
-});
+
 
     </script>
 
